@@ -3,8 +3,8 @@ resource "local_file" "cloud_init_user_data_master" {
   content  = templatefile("${path.module}/templates/user_data.tpl", {
     cluster-name = var.f5xc_cluster_name
     host-name = format("m%d", count.index)
-    latitude = 0
-    longitude = 0
+    latitude = var.f5xc_cluster_latitude
+    longitude = var.f5xc_cluster_longitude
     maurice-private-endpoint = module.maurice.endpoints.maurice_mtls
     maurice-endpoint = module.maurice.endpoints.maurice
     site-registration-token = volterra_token.site.id
@@ -18,8 +18,8 @@ resource "local_file" "cloud_init_user_data_worker" {
   content  = templatefile("${path.module}/templates/user_data.tpl", {
     cluster-name = var.f5xc_cluster_name
     host-name = format("w%d", count.index)
-    latitude = 0
-    longitude = 0
+    latitude = var.f5xc_cluster_latitude
+    longitude = var.f5xc_cluster_longitude
     maurice-private-endpoint = module.maurice.endpoints.maurice_mtls
     maurice-endpoint = module.maurice.endpoints.maurice
     site-registration-token = volterra_token.site.id

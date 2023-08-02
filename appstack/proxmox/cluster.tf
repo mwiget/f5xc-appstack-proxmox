@@ -35,6 +35,7 @@ resource "volterra_voltstack_site" "cluster" {
 
   no_bond_devices = true
   disable_gpu     = true
+  enable_vm       = true
 
   k8s_cluster {
     namespace = "system"

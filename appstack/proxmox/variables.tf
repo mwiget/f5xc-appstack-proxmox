@@ -2,6 +2,16 @@ variable "ssh_public_key" {
   type = string
 }
 
+variable "f5xc_cluster_latitude" {
+  type = number
+  default = 37
+}
+
+variable "f5xc_cluster_longitude" {
+  type = number
+  default = -121
+}
+
 variable "f5xc_api_url" {
   type = string
 }
@@ -84,5 +94,4 @@ variable "f5xc_cluster_labels" {
 }
 
 variable "owner_tag" {}
-variable "default_gateway" {}
 variable "is_sensitive" {}
