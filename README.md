@@ -9,6 +9,12 @@ You need to create a vm template in proxmox from the F5 XC VER CE kvm image and 
 Copy terraform.tfvars.example to terraform.tfvars, then update the file with credentials 
 and number of desired master (1 or 3) and worker nodes (0..128).
 
+## Prerequisites
+
+- A directory /var/lib/vz/snippets must exist on the proxmox server (to store cloud-init data per node)
+- A F5 XC ver image template must exist
+
+
 ```
 terraform init
 terraform plan
