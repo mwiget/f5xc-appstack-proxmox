@@ -58,6 +58,10 @@ variable "worker_nodes_count" {
 }
 
 variable "pm_storage" {}
+variable "pm_disk_size" {
+  type = string
+  default = "50G"
+}
 variable "pm_node" {}
 variable "pm_api_url" {}
 variable "pm_api_token_id" {}

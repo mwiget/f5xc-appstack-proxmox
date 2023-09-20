@@ -36,7 +36,7 @@ resource "null_resource" "cloud_init_master" {
   connection {
     type     = "ssh"
     user     = var.pve_user
-    #    password = var.pve_password
+    #password = var.pve_password
     private_key = var.pve_private_key
     host     = var.pve_host
   }

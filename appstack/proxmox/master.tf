@@ -18,8 +18,8 @@ resource "proxmox_vm_qemu" "master" {
   scsihw           = "virtio-scsi-single"
   disk {
     storage           = var.pm_storage
-    size              = "50G"
-    type              = "virtio"
+    size              = var.pm_disk_size
+    type              = "scsi"
     iothread          = 0
   }
 

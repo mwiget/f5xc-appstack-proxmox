@@ -1,4 +1,5 @@
 resource "proxmox_vm_qemu" "worker" {
+  depends_on        = [ local_file.cloud_init_user_data_worker ]
   count             = var.worker_nodes_count
   name              = format("%s-w%d", var.f5xc_cluster_name, count.index)
   target_node       = var.pm_node
